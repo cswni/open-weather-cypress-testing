@@ -62,7 +62,7 @@ jobs:
           wait-on: 'http://localhost:5173'
           record: true
           parallel: true
-          browser: chrome
+          #browser: chrome
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           DOTENV_KEY: ${{ secrets.DOTENV_KEY }}
