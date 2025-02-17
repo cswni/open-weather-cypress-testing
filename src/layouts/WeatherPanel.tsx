@@ -25,10 +25,8 @@ const WeatherPanel = () => {
            if (!response.ok) throw { response };
            return response.json();
        }).then((weatherData) => {
-           console.log(weatherData);
            setWeather(weatherData);
        }).catch(error => {
-           console.log(error);
            setLoading(false);
            setShow(false);
        });
@@ -38,14 +36,14 @@ const WeatherPanel = () => {
 
        const response = await fetch(urlForecast).then(response => response.json())
            .then((forecastData) => {
-               console.log(forecastData);
+               
                setWeather(forecastData);
                setForecast(forecastData);
 
                setLoading(false);
                setShow(true);
            }).catch(error => {
-               console.log(error);
+               
                setLoading(false);
                setShow(false);
            });

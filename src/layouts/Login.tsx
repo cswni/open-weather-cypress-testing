@@ -8,6 +8,10 @@ const Login: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
     try {
       await signInWithPopup(auth, new GoogleAuthProvider());
       onLogin();
+
+      //set googleLogged in localStorage
+      localStorage.setItem("googleLogged", "true");
+      
     } catch (error) {
       console.error("Error al iniciar sesión con Google", error);
     }

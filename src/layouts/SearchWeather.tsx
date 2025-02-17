@@ -24,7 +24,7 @@ const SearchWeather = ({ newLocation, onLogout }) => {
           setCity(cityName);
 
           if (cityName) {
-            setTimeout(() => newLocation(cityName), 3000);
+            setTimeout(() => newLocation(cityName),100);
           }
         });
     });
