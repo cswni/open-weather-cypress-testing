@@ -2,9 +2,12 @@
 import { defineConfig } from "cypress";
 import { loadEnv } from 'vite'
 const env = loadEnv("", process.cwd(), "VITE_");
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export default defineConfig({
-  projectId: 'tk8ms5',
+  projectId: env.VITE_CYPRESS_PROJECT_ID,
   env: {
     googleClientId : env.VITE_APP_GOOGLE_CLIENTID,
     googleClientSecret : env.VITE_APP_GOOGLE_CLIENT_SECRET,
