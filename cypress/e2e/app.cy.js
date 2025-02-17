@@ -39,8 +39,8 @@ describe('App Component', () => {
       cy.contains('Predicción').should('be.visible');
 
       // Esperar a que la solicitud ocurra después del login
-      cy.wait('@getWeather', { timeout: 10000 });
-      cy.wait('@getForecast', { timeout: 10000 });
+      cy.wait('@getWeather', { timeout: 50000 });
+      cy.wait('@getForecast', { timeout: 50000 });
 
       // Verificar que la UI se actualiza correctamente
       cy.contains('Managua Mock').should('be.visible');

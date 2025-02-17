@@ -6,8 +6,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const env = loadEnv("", process.cwd(), "VITE_");
-console.log('ENVIRONMENTS: ', env);
-
 export default defineConfig({
   projectId: env.VITE_CYPRESS_PROJECT_ID,
   env: {
