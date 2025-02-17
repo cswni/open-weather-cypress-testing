@@ -1,10 +1,11 @@
 
 import { defineConfig } from "cypress";
 import { loadEnv } from 'vite'
-const env = loadEnv("", process.cwd(), "VITE_");
 import dotenv from "dotenv";
+
 dotenv.config();
 
+const env = loadEnv("", process.cwd(), "VITE_");
 console.log('ENVIRONMENTS: ', env);
 
 export default defineConfig({
