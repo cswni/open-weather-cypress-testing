@@ -3,6 +3,18 @@ import { mockForecast } from "./forecast";
 
 describe('App Component', () => {
   beforeEach(() => {
+    // Mock geolocation API
+    cy.window().then((win) => {
+      cy.stub(win.navigator.geolocation, 'getCurrentPosition').callsFake((callback) => {
+        return callback({
+          coords: {
+            latitude: 40.7128, // Example latitude (New York City)
+            longitude: -74.006, // Example longitude (New York City)
+          },
+        });
+      });
+      });
+
     cy.visit('/');
   });
 

@@ -18,7 +18,6 @@ Cypress.Commands.add('loginByGoogleApi', () => {
       url: 'https://www.googleapis.com/oauth2/v3/userinfo',
       headers: { Authorization: `Bearer ${access_token}` },
     }).then(({ body }) => {
-      cy.log(body)
       const userItem = {
         token: id_token,
         user: {
@@ -32,6 +31,8 @@ Cypress.Commands.add('loginByGoogleApi', () => {
 
       window.localStorage.setItem('googleLogged', JSON.stringify(userItem))
       cy.visit('/')
+
+      console.log('User logged in: ', userItem)
     })
   })
 })
