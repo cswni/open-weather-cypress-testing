@@ -4,7 +4,7 @@ import { loadEnv } from 'vite'
 const env = loadEnv("", process.cwd(), "VITE_");
 
 export default defineConfig({
-  projectId: env.VITE_CYPRESS_PROJECT_ID,
+  projectId: 'tk8ms5',
   env: {
     googleClientId : env.VITE_APP_GOOGLE_CLIENTID,
     googleClientSecret : env.VITE_APP_GOOGLE_CLIENT_SECRET,
